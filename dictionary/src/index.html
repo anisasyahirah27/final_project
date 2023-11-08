@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lexicon Dictionary</title>
+    <link rel="stylesheet" href="fetchapi.css" />
+    <script src="fetchapi.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url("note.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .dictionary {
+        text-align: center;
+        margin: 10px;
+      }
+
+      input[type="text"] {
+        width: 300px;
+        padding: 5px;
+      }
+
+      button {
+        padding: 5px 10px;
+      }
+
+      .word-info {
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .meanings,
+      .examples, 
+      .sounds,
+      .related-url {
+        margin-top: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
+      nav {
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+        padding: 10px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+
+      nav img {
+        height: 220px; /* Adjust the height to your desired size */
+        width: auto; /* Maintain the aspect ratio */
+        float: left;
+        margin-right: 20px;
+      }
+
+      input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #DC143C;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-left: 13px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+      }
+
+      button:hover {
+        background-color: #FA2A55;
+        color: black;
+        transform: scale(1.05); /* Slightly scale the button on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add a more pronounced shadow on hover */
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        font-size: 15pt;
+        margin-left: 50px;
+      }
+
+      .container2 {
+        background-color: #660000; /* Set the background color to grey */
+        display: flex; /* Use flexbox to arrange items horizontally */
+        justify-content: center; /* Center items horizontally */
+        padding: 20px; /* Add some padding for spacing */
+      }
+
+      .container2 a {
+          text-decoration: none; /* Remove the default underline on links */
+          margin-right: 50px; /* Adjust the margin between the links */
+          text-align: center; /* Center the text within each link */
+          font-size: 15pt;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          border-bottom: 2px solid transparent; /* Add a transparent border */
+          transition: border-color 0.3s; /* Add a smooth transition for border color */
+      }
+
+      .container2 a:hover {
+          text-decoration: none; /* Remove the default underline on links */
+          margin-right: 50px; /* Adjust the margin between the links */
+          text-align: center; /* Center the text within each link */
+          font-size: 15pt;
+          color: #FFFFFF;
+          font-family: Arial, Helvetica, sans-serif;
+          border-color: transparent; /* Remove the border color on hover */
+          animation: glow 1s infinite alternate; /* Apply the glowing effect */
+        }
+
+        @keyframes glow {
+          0% {
+            box-shadow: 0 0 5px #FFFFFF; /* Initial glow effect */
+          }
+          100% {
+            box-shadow: 0 0 20px #FFFFFF; /* Maximum glow effect */
+          }
+        }
+
+      footer {
+          background-color: #660000;
+          color: black;
+          padding: 20px 0;
+      }
+
+      .footer-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+      }
+
+      .footer-logo img {
+          max-width: 100px;
+      }
+
+      .footer-links ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+      }
+
+      .footer-links li {
+          margin-right: 20px;
+      }
+
+      .footer-links a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 24px;
+      }
+
+      /* Style for the Twitter image */
+      .footer-links img {
+          width: 32px; /* Adjust the width as needed */
+          height: 32px; /* Adjust the height as needed */
+          transition: transform 0.3s, filter 0.3s, opacity 0.3s; /* Add a transition effect */
+      }
+
+      .footer-links img:hover {
+        transform: scale(1.2); /* Scale the image on hover */
+        filter: brightness(1.2); /* Increase brightness on hover */
+        opacity: 0.8; /* Reduce opacity on hover */
+      }
+
+      /* Style for Font Awesome icons */
+      .footer-links i {
+          font-size: 32px;
+      }
+
+      .footer-bottom {
+          text-align: center;
+          color: white;
+          padding: 10px 0;
+          font-size: 15pt;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 25pt;
+        font-family: Quicksand;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); /* Add a 3D text shadow */
+      }
+
+      .video-container {
+          margin-top: 0;
+          display: flex;
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+      }
+
+      video {
+          max-width: 100%;
+          max-height: 100%;
+      }
+
+      /* Adjust the navigation and search bar for smaller screens */
+      @media (max-width: 768px) {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <img src="logo.png">
+        <input type="text" id="searchData" placeholder="Search a Dictionary">
+        <button onclick="buttonClicked()">SEARCH</button>
+      </nav>
+    </div>
+
+    <div class="container2">
+      <a href="index.html">Dictionary</a>
+      <a href="thesaurus.html">Thesaurus</a>
+      <a href="antonym.html">Antonyms</a>
+      <a href="crud.html">Words of the Day</a>
+    </div>
+    
+    <div class="dictionary">
+      <div class="word-info">
+        <h2 id="word"></h2>
+        <div class="meanings" id="meanings"></div>
+        <div class="adjective" id="adjective"></div>
+        <div class="examples" id="examples"></div>
+        <div class="sounds" id="sounds"></div>
+        <div class="related-url" id="relatedURL"></div>
+      </div>    
+    </div>
+
+    <br><br><br><br>
+    <h3>Explore our comprehensive dictionary website to easily access the meanings,<br> pronunciations, and usage examples of any word, all at your fingertips.</h3>
+    <div class="video-container">
+      <video width="640" height="360" controls>
+          <source src="dict.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <br><br><br><br><br><br><br>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-logo">
+              <img src="logo.png" alt="Your Logo">
+          </div>
+          <div class="footer-links">
+              <ul>
+                  <li><a href="twitter.com"><img src="twitter.png" alt="Twitter"></a></li>
+                  <li><a href="facebook.com"><img src="fb.png" alt="Facebook"></a></li>
+                  <li><a href="instagram.com"><img src="ig.png" alt="Instagram"></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom"> 
+          Learn a new word every day.<br><br>
+          &copy; 2023 Lexicon. All rights reserved.
+      </div>
+      <br><br>
+    </footer>
+
+  </body>
+</html> 

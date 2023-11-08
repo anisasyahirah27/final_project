@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lexicon Word of the Day</title>
+    <link rel="stylesheet" href="index.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <img src="logo.png">
+      </nav>
+    </div>
+
+    <div class="container2">
+      <a href="index.html">Dictionary</a>
+      <a href="thesaurus.html">Thesaurus</a>
+      <a href="antonym.html">Antonyms</a>
+      <a href="crud.html">Words of the Day</a>
+    </div>
+
+    <div class="mainWrapper">
+      <h1>Create Your Word of the Day!</h1>
+    
+      <form>
+        <div class="form-group">
+          <p>Word : </p>
+          <input id="fileName" type="text" class="form-control">
+        </div>
+    
+        <!-- Add the following code to display the selected file name -->
+        <div id="fileNameDisplay" class="form-group"></div>
+    
+        <div class="form-group">
+          <p>Content : </p>
+          <textarea id="fileContents" class="form-control" rows="5"></textarea>
+        </div>
+      </form>
+      <br>
+      <button id="btnCreate" class="btn btn-default">Create</button>
+      <br><br><br>
+      <h3>Lexicon's Language Luxuries:</h3>
+    </div>
+    
+    <!-- Display the list of existing files -->
+    <div id="fileListContainer" class="file-list-container">
+      <!-- File entries will be added here -->
+    </div>
+    
+    <!-- Display the file content when the "Read" button is clicked -->
+    <div id="fileContentDisplay" class="file-content-display"></div>    
+
+    <br>
+    <h4>Expand your vocabulary and knowledge with our word of the day feature, <br>where you'll discover fascinating words and their meanings every day.</h4>
+    <div class="video-container">
+      <video width="640" height="360" controls>
+          <source src="crud.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <br><br><br><br><br><br><br>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-logo">
+              <img src="logo.png" alt="Your Logo">
+          </div>
+          <div class="footer-links">
+              <ul>
+                  <li><a href="twitter.com"><img src="twitter.png" alt="Twitter"></a></li>
+                  <li><a href="facebook.com"><img src="fb.png" alt="Facebook"></a></li>
+                  <li><a href="instagram.com"><img src="ig.png" alt="Instagram"></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          Learn a new word every day.<br><br>
+          &copy; 2023 Lexicon. All rights reserved.
+      </div>
+      <br><br>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

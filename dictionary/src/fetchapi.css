@@ -1,0 +1,57 @@
+/* Add styles here */
+#word {
+    margin-top: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient( #F5DEB3, #C3AC81);
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+    transition: background-size .7s, background-position .5s ease-in-out;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); /* Add a 3D text shadow */
+  }
+  
+#word:hover {
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+    transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+#antonyms {
+    font-size: 25px;
+    margin-top: 170px;
+}
+
+#synonyms {
+    font-size: 25px;
+    margin-top: 170px;
+    color: #382F2B; /* Text color */
+}
+
+#examples {
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+#sounds {
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+#relatedURL {
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+#meanings ul {
+    margin-top: 170px;
+    font-size: 50px;
+}
+
+#meanings li {
+    font-size: 25px;
+}
